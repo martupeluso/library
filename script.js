@@ -1,4 +1,23 @@
-const books = [];
+const books = [
+    {
+        title: "Elantris",
+        author: "Brandon Sanderson",
+        pages: 592,
+        read: false,
+    },
+    {
+        title: "The Final Empire",
+        author: "Brandon Sanderson",
+        pages: 541,
+        read: true,
+    },
+    {
+        title: "The Way of Kings",
+        author: "Brandon Sanderson",
+        pages: 1008,
+        read: false,
+    }
+];
 
 function Book(title, author, pages, read){
     this.title = title;
