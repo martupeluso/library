@@ -1,5 +1,12 @@
 const booksContainer = document.querySelector(".books-container");
 
+const addButton = document.querySelector(".add-btn");
+const modal = document.querySelector(".modal");
+
+addButton.addEventListener("click", () => {
+    modal.showModal();
+})
+
 const books = [
     {
         title: "Elantris",
