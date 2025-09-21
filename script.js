@@ -1,3 +1,5 @@
+const booksContainer = document.querySelector(".books-container");
+
 const books = [
     {
         title: "Elantris",
@@ -31,3 +33,27 @@ function addBookToLibrary(title, author, pages, read){
     const newBook = new Book (title, author, pages, read);
     books.push(newBook);
 }
+
+function displayBooks(){
+    for (let book of books){
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        const bookTitle = document.createElement("h2");
+        bookTitle.textContent = book.title;
+
+        const authorName = document.createElement("p");
+        authorName.textContent = book.author;
+
+        const numberOfPages = document.createElement("p");
+        numberOfPages.textContent = `${book.pages} pages`;
+
+        const readStatus = document.createElement("p");
+        readStatus.textContent = book.read ? "Read" : "Not read";
+
+        card.append(bookTitle, authorName, numberOfPages, readStatus);
+        booksContainer.append(card);
+    }
+}
+
+displayBooks();
