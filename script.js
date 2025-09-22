@@ -2,6 +2,7 @@ const booksContainer = document.querySelector(".books-container");
 
 const addButton = document.querySelector(".add-btn");
 const modal = document.querySelector(".modal");
+const closeModalButton = document.querySelector(".close-btn");
 
 const form = document.querySelector("form");
 
@@ -9,8 +10,13 @@ addButton.addEventListener("click", () => {
     modal.showModal();
 });
 
+closeModalButton.addEventListener("click", () => {
+    modal.close();
+});
+
 form.addEventListener("submit", e => {
     e.preventDefault();
+    modal.close();
 });
 
 const books = [
