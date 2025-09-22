@@ -3,9 +3,15 @@ const booksContainer = document.querySelector(".books-container");
 const addButton = document.querySelector(".add-btn");
 const modal = document.querySelector(".modal");
 
+const form = document.querySelector("form");
+
 addButton.addEventListener("click", () => {
     modal.showModal();
-})
+});
+
+form.addEventListener("submit", e => {
+    e.preventDefault();
+});
 
 const books = [
     {
