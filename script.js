@@ -15,6 +15,7 @@ closeModalButton.addEventListener("click", () => {
 });
 
 form.addEventListener("submit", e => {
+    processNewBook();
     e.preventDefault();
     modal.close();
 });
@@ -48,12 +49,25 @@ function Book(title, author, pages, read){
     this.id = crypto.randomUUID(); // generates a unique id, preventing issues when books get removed
 }
 
+function processNewBook(){
+    const title = document.querySelector("#title").value;
+    const author = document.querySelector("#author").value;
+    const pages = document.querySelector("#pages").value;
+    const read = document.querySelector("#read").checked;
+
+    addBookToLibrary(title, author, pages, read);
+};
+
 function addBookToLibrary(title, author, pages, read){
     const newBook = new Book (title, author, pages, read);
     books.push(newBook);
+
+    displayBooks();
 }
 
 function displayBooks(){
+    booksContainer.textContent = ""; // clears existing cards first to prevent duplicates when re-rendering
+
     for (let book of books){
         const card = document.createElement("div");
         card.classList.add("card");
