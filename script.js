@@ -26,18 +26,21 @@ const books = [
         author: "Brandon Sanderson",
         pages: 592,
         read: false,
+        id: 1,
     },
     {
         title: "The Final Empire",
         author: "Brandon Sanderson",
         pages: 541,
         read: true,
+        id: 2,
     },
     {
         title: "The Way of Kings",
         author: "Brandon Sanderson",
         pages: 1008,
         read: false,
+        id: 3,
     }
 ];
 
@@ -71,6 +74,7 @@ function displayBooks(){
     for (let book of books){
         const card = document.createElement("div");
         card.classList.add("card");
+        card.setAttribute("data-id", book.id);
 
         const bookTitle = document.createElement("h2");
         bookTitle.textContent = book.title;
@@ -84,7 +88,21 @@ function displayBooks(){
         const readStatus = document.createElement("p");
         readStatus.textContent = book.read ? "Read" : "Not read";
 
-        card.append(bookTitle, authorName, numberOfPages, readStatus);
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+
+        deleteButton.addEventListener("click", e => {
+            const selectedBook = e.target.parentElement;
+            const selectedBookID = selectedBook.getAttribute("data-id");
+
+            const selectedBookIndex = books.findIndex(book => book.id == selectedBookID);
+
+            books.splice(selectedBookIndex, 1);
+
+            displayBooks();
+        });
+
+        card.append(bookTitle, authorName, numberOfPages, readStatus, deleteButton);
         booksContainer.append(card);
     }
 }
