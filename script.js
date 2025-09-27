@@ -27,6 +27,9 @@ const books = [
         pages: 592,
         read: false,
         id: 1,
+        toggleRead: function(){
+            this.read = !this.read;
+        }
     },
     {
         title: "The Final Empire",
@@ -34,6 +37,9 @@ const books = [
         pages: 541,
         read: true,
         id: 2,
+        toggleRead: function(){
+            this.read = !this.read;
+        }
     },
     {
         title: "The Way of Kings",
@@ -41,6 +47,9 @@ const books = [
         pages: 1008,
         read: false,
         id: 3,
+        toggleRead: function(){
+            this.read = !this.read;
+        }
     }
 ];
 
@@ -50,6 +59,10 @@ function Book(title, author, pages, read){
     this.pages = pages;
     this.read = read;
     this.id = crypto.randomUUID(); // generates a unique id, preventing issues when books get removed
+}
+
+Book.prototype.toggleRead = function(){
+    this.read = !this.read;
 }
 
 function processNewBook(){
@@ -85,8 +98,19 @@ function displayBooks(){
         const numberOfPages = document.createElement("p");
         numberOfPages.textContent = `${book.pages} pages`;
 
-        const readStatus = document.createElement("p");
+        const readStatus = document.createElement("button");
         readStatus.textContent = book.read ? "Read" : "Not read";
+
+        readStatus.addEventListener("click", e => {
+            const selectedBook = e.target.parentElement;
+            const selectedBookID = selectedBook.getAttribute("data-id");
+
+            const bookToBeToggled = books.find(book => book.id == selectedBookID);
+
+            bookToBeToggled.toggleRead();
+            
+            displayBooks();
+        })
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
