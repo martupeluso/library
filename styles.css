@@ -29,3 +29,16 @@
 body {
     line-height: 1.5;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    border-bottom: 2px solid black;
+}
+
+h1 {
+    font-family: "Young Serif", var(--font-stack);
+    font-weight: 400;
+}
