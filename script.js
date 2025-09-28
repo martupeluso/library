@@ -101,6 +101,10 @@ function displayBooks(){
         const readStatus = document.createElement("button");
         readStatus.textContent = book.read ? "Read" : "Not read";
 
+        if (book.read){
+            readStatus.classList.add("read");
+        }
+
         readStatus.addEventListener("click", e => {
             const selectedBook = e.target.parentElement;
             const selectedBookID = selectedBook.getAttribute("data-id");
@@ -108,12 +112,14 @@ function displayBooks(){
             const bookToBeToggled = books.find(book => book.id == selectedBookID);
 
             bookToBeToggled.toggleRead();
+            selectedBook.classList.toggle("read");
             
             displayBooks();
         })
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
+        deleteButton.classList.add("delete-btn");
 
         deleteButton.addEventListener("click", e => {
             const selectedBook = e.target.parentElement;

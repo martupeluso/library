@@ -42,3 +42,50 @@ h1 {
     font-family: "Young Serif", var(--font-stack);
     font-weight: 400;
 }
+
+.books-container {
+    display: grid;
+    padding: 40px 60px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.card {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.card h2 {
+    font-family: "Young Serif", var(--font-stack);
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.card p {
+    font-family: "Figtree", var(--font-stack);
+    margin-bottom: 12px;
+}
+
+.card button {
+    font-family: "Figtree", var(--font-stack);
+    border: 2px solid black;
+    border-radius: 8px;
+    background: none;
+    padding: 12px 24px;
+    width: 105px;
+}
+
+.card button:first-of-type {
+    margin-right: 6px;
+}
+
+.card button:hover {
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.card button.read, button.delete-btn:hover {
+    background-color: black;
+    color: white;
+}
