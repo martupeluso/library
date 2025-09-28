@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Young Serif';
+    src: url('YoungSerif-Regular.woff2') format('woff2'),
+        url('YoungSerif-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('Figtree-Regular.woff2') format('woff2'),
+        url('Figtree-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
