@@ -89,3 +89,93 @@ h1 {
     background-color: black;
     color: white;
 }
+
+.modal {
+    padding: 35px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.modal .modal-header h2 {
+    font-family: "Young Serif", var(--font-stack);
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.modal .close-btn {
+    cursor: pointer;
+}
+
+.modal:open {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    font-family: "Figtree", var(--font-stack);
+}
+
+.modal form label, .modal form input, .modal form div {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+}
+
+.modal form input:not(input[type="checkbox"]){
+    background-color: #eee;
+    padding: 6px;
+    border: none;
+    border-radius: 10px;
+}
+
+.modal form div {
+    margin-top: 16px;
+}
+
+.modal form div label {
+    margin-right: 6px;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    vertical-align: -22px;
+    background-color: #eee;
+    border-radius: 15px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+  content: url(./icons/check.svg);
+  position: absolute;
+  font-size: 1.2rem;
+  right: 3px;
+  top: 4px;
+  visibility: hidden;
+}
+
+input[type="checkbox"]:checked::before {
+  visibility: visible;
+}
+
+.modal button {
+    background-color: black;
+    border: none;
+    font: inherit;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 15px;
+    padding: 6px 24px;
+    cursor: pointer;
+}
