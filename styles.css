@@ -85,7 +85,7 @@ h1 {
     background-color: #eee;
 }
 
-.card button.read, button.delete-btn:hover {
+.card button.read {
     background-color: black;
     color: white;
 }
