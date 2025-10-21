@@ -102,10 +102,13 @@ h1 {
 }
 
 .modal .modal-header {
+    margin-bottom: 18px;
+}
+
+.modal .modal-header .top{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 18px;
 }
 
 .modal .modal-header h2 {
@@ -139,6 +142,17 @@ h1 {
     padding: 6px;
     border: none;
     border-radius: 10px;
+}
+
+.modal form input + p {
+    display: none;
+}
+
+.modal form input:user-invalid + p {
+    display: block;
+    margin-top: -6px;
+    margin-bottom: 6px;
+    color: #a80000;
 }
 
 .modal form div {
