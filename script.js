@@ -16,6 +16,7 @@ closeModalButton.addEventListener("click", () => {
 
 form.addEventListener("submit", e => {
     processNewBook();
+    form.reset();
     e.preventDefault();
     modal.close();
 });
