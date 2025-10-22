@@ -52,6 +52,13 @@ h1 {
     cursor: pointer;
 }
 
+.books-container:has(> p) {
+    display: flex;
+    justify-content: center;
+    font-family: "Figtree", var(--font-stack);
+    font-size: 1.3rem;
+}
+
 .books-container {
     display: grid;
     padding: 40px 60px;

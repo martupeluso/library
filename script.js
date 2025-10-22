@@ -85,6 +85,12 @@ function addBookToLibrary(title, author, pages, read){
 function displayBooks(){
     booksContainer.textContent = ""; // clears existing cards first to prevent duplicates when re-rendering
 
+    if (books.length === 0){
+        let paragraph = document.createElement("p");
+        paragraph.textContent = "Looks like your library is empty! Click the plus icon in the top-right corner to add your first book."
+        booksContainer.append(paragraph);
+    }
+
     for (let book of books){
         const card = document.createElement("div");
         card.classList.add("card");
