@@ -129,14 +129,16 @@ function displayBooks(){
         deleteButton.classList.add("delete-btn");
 
         deleteButton.addEventListener("click", e => {
-            const selectedBook = e.target.parentElement;
-            const selectedBookID = selectedBook.getAttribute("data-id");
+            if (confirm(`Are you sure you want to delete ${book.title}?`)){
+                const selectedBook = e.target.parentElement;
+                const selectedBookID = selectedBook.getAttribute("data-id");
 
-            const selectedBookIndex = books.findIndex(book => book.id == selectedBookID);
+                const selectedBookIndex = books.findIndex(book => book.id == selectedBookID);
 
-            books.splice(selectedBookIndex, 1);
+                books.splice(selectedBookIndex, 1);
 
-            displayBooks();
+                displayBooks();
+            }
         });
 
         card.append(bookTitle, authorName, numberOfPages, readStatus, deleteButton);
